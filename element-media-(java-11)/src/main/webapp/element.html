@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/tab.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Elements</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-lite" style="background-color: blanchedalmond;">
+        <div class="container-fluid justify-content-between">
+            <span class="navbar-brand" style="color: black;">Welcome to Element Media</span>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <button class="nav-link" id="home-tab-link">
+                        <span id="btn-text">Home</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link disabled" id="elements-tab-link">
+                        <span id="current-tab">Elements</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="profile-tab-link">
+                        <span id="btn-text">Profile</span>
+                    </button>
+                </li>
+            </ul>
+            <button class="btn btn-danger" id="logout-btn" type="button">
+                <i class="bi bi-key-fill"></i> Logout
+            </button>
+        </div>
+    </nav>
+
+    <div class="row ms-0 me-0 mb-5 p-3" id="element-main-block">
+        <div class="col-1"></div>
+
+        <div class="col-3 p-3" id="block-style" style="width: 280px;">
+            <h5>Choose element picture:</h5>
+            <div id="image-list-selector">
+                
+            </div>
+        </div>
+
+        <div class="col-1"></div>
+
+        <div class="col-6 p-3" id="block-style">
+            <div>
+                <h5>Your element items:</h5>
+            </div>
+            <div id="element-item-list">
+                                
+            </div>
+        </div>
+    </div>
+
+    <!-- Button image clone start -->
+    <div class="d-none" id="button-image-clone">
+        <button class="mb-2 p-0" id="element-image-btn" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <img id="button-image" src="" style="width: 200px;">
+        </button>
+    </div>
+    <!-- Button image clone end -->
+
+    <!-- Element item clone start -->
+    <div class="d-none" id="element-item-clone">
+        <div class="d-flex position-relative mb-2" id="element-item">
+            <span class="d-none" id="element-id"></span>
+            <img id="item-image" src="" style="max-width: 200px; margin: 5px;">
+            <div>
+                <span class="position-absolute top-0 end-0 me-2">
+                    Rating: 
+                    <span id="item-rating"></span>
+                </span>
+                <h5 id="item-title"></h5>
+                <p class="mb-0" id="item-description"></p>
+            </div>
+            <div>
+                <button class="btn btn-warning position-absolute top-50 end-0 translate-middle-y me-2 mb-2" id="edit-btn" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <i class="bi bi-pencil-fill"></i> Edit
+                </button>
+                <button class="btn btn-danger position-absolute bottom-0 end-0 me-2 mb-2" id="delete-btn" type="button">
+                    <i class="bi bi-trash-fill"></i> Delete
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Element item clone end -->
+
+    <!-- Modal Start -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Add Element description:</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" id="add-element-form">
+                        <div class="mb-3">
+                            <img class="mb-3" id="selected-element-image" src="" style="width: 200px;">
+                        </div>
+                        <div class="mb-3">
+                            <label for="add-title-input" class="form-label">Title:</label>
+                            <input type="text" class="form-control" id="add-title-input" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="add-description-input" class="form-label">Description:</label>
+                            <input type="text" class="form-control" id="add-description-input" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="add-rating-select" class="form-label">Rating:</label>
+                            <select class="form-select" id="add-rating-select" required>
+                                <option selected value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <button type="button" class="btn btn-success" id="modal-save-btn" data-bs-dismiss="modal">Save</button>
+                            <button type="button" class="btn btn-danger" id="modal-cancel-btn" data-bs-dismiss="modal">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="java-script/navbar.js"></script>
+    <script src="java-script/element.js"></script>
+
+</body>
+</html>

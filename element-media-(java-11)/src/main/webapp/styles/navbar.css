@@ -1,0 +1,14 @@
+.nav-link {
+    border-style: solid;
+    border-color: blanchedalmond;
+    background-color: blanchedalmond;
+}
+
+.disabled {
+    color: gray;
+    background-color: wheat;
+}
+
+#btn-text {
+    color: black;
+}

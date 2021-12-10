@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/tab.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Profile</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-lite" style="background-color: blanchedalmond;">
+        <div class="container-fluid justify-content-between">
+            <span class="navbar-brand" style="color: black;">Welcome to Element Media</span>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <button class="nav-link" id="home-tab-link">
+                        <span id="btn-text">Home</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="elements-tab-link">
+                        <span id="btn-text">Elements</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link disabled" id="profile-tab-link">
+                        <span id="current-tab">Profile</span>
+                    </button>
+                </li>
+            </ul>
+            <button class="btn btn-danger" id="logout-btn" type="button">
+                <i class="bi bi-key-fill"></i> Logout
+            </button>
+        </div>
+    </nav>
+
+    <div class="row ms-0 me-0 mb-5 p-3" id="profile-main-block">
+        <div class="col-4"></div>
+
+        <div class="col-4">
+            <h3 class="p-3" id="block-style">You can edit or delete your profile from here!</h3>
+            <div class="p-3 mt-3" id="block-style">
+                <div class="mb-2" id="block-style">
+                    <h5>Click the button below to edit your profile: </h5>
+                    <button type="button" class="btn btn-warning" id="edit-btn">
+                        <i class="bi bi-pencil-fill"></i> Edit Profile
+                    </button>
+                </div>
+    
+                <form action="update-profile" method="POST" id="edit-profile" style="display: none;">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">New Password</label>
+                        <input type="password" class="form-control" id="newPassword" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="repeatPassword" class="form-label">Repeat Password</label>
+                        <input type="password" class="form-control" id="repeatPassword" required>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <button type="submit" class="btn btn-success" id="save-btn">
+                            <i class="bi bi-pencil-fill"></i> Save
+                        </button>
+                        <button type="button" class="btn btn-danger" id="cancel-btn">
+                            <i class="bi bi-trash-fill"></i> Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="p-3 mt-3" id="block-style">
+                <h5>Click the button below to delete your profile: </h5>
+                <button type="button" class="btn btn-danger" id="delete-btn">
+                    <i class="bi bi-trash-fill"></i> Delete Profile
+                </button>
+            </div>
+        </div>
+
+        <div class="col-4"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="java-script/navbar.js"></script>
+    <script src="java-script/profile.js"></script>
+
+</body>
+</html>

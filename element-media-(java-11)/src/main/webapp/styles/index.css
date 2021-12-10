@@ -1,0 +1,21 @@
+#title-block {
+    text-align: center;
+}
+
+#form-block {
+    width: 300px;
+    border-style: solid;
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: blanchedalmond;
+    background-color: blanchedalmond;
+}
+
+#register-form-block {
+    width: 300px;
+    border-style: solid;
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: blanchedalmond;
+    background-color: blanchedalmond;
+}

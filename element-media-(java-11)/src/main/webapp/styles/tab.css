@@ -1,0 +1,37 @@
+#filter-form-block {
+    height: fit-content;
+    border-style: solid;
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: blanchedalmond;
+    background-color: blanchedalmond;
+}
+
+#block-style {
+    height: fit-content;
+    border-style: solid;
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: blanchedalmond;
+    background-color: blanchedalmond;
+}
+
+#result-item, #element-item {
+    height: 150px;
+    border-style: solid;
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: whitesmoke;
+    background-color: whitesmoke;
+}
+
+#element-image-btn {
+    border-style: solid;
+    border-color: blanchedalmond;
+    background-color: blanchedalmond;
+}
+
+#image-list-selector {
+    max-height: 350px;
+    overflow: auto;
+}
